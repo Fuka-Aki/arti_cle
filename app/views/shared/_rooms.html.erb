@@ -1,0 +1,42 @@
+<ul class='room-lists'>
+  <% if @rooms.present? %>
+    <% @rooms.each do |room| %>
+      <li class='list'>
+        <%= link_to room_messages_path(room.id) do %>
+          <div class='room-info'>
+            <h3 class='room-name'>
+              <div class='room_name'>
+                <%= room.artist_name %>
+              </div>
+              <% if !Favorite.exists?(user_id: current_user.id, room_id: room.id) %>
+                <%= link_to 'いいね外す', '#', method: :DELETE, remote: true %>
+              <% else %>
+                <%= link_to 'いいねする', '#', method: :POST, remote: true %>
+              <% end %>
+            </h3>
+          </div>
+          <div class='room-img-content'>
+            <%= image_tag room.image, class: "room-img" if room.image.attached?  %>
+          </div>
+           <div class='room_genre'>
+            <%= room.genre.name %>
+          </div>
+          <div class='room_create_user'>
+            <%= room.user.nickname %>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  <% else %>
+    <li class='list'>
+      <%= link_to new_room_path, class: 'NewPost' do %>
+      <%= image_tag "profile.jpg", class: "item-img" %>
+      <div class='room-info'>
+        <h3 class='room-name'>
+          好きなアーティストのチャットを作成しましょう！
+        </h3>
+      </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
