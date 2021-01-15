@@ -1,0 +1,33 @@
+<nav class="navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <% if user_signed_in? %>
+      <%= link_to 'ArtiCle', '#', class: "navbar-brand" %>
+    <% else %>
+      <%= link_to 'ArtiCle', '#', class: "navbar-brand" %>
+    <% end %>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <% if user_signed_in? %> 
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'New Post', '#', class: "NewPost" %></li>
+        <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="input-sm form-control" placeholder="Search">
+        </div>
+        </form>
+      </ul>
+      <% end %>
+      <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %> 
+        <li><%= link_to current_user.nickname, '#', class: "UserName" %></li>
+        <li><li><%= link_to 'LogOut', destroy_user_session_path, method: :delete, class: "LogOut" %></li>
+      <% else %>
+        <li><%= link_to 'LogIn', new_user_session_path, class: "LigIn" %></li>
+        <li><%= link_to 'SignUp', new_user_registration_path, class: "SignUp" %></li>
+        <li><%= link_to 'GuestUser', '#', method: :post, class:"GuestLogin" %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
