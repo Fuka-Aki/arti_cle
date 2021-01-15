@@ -7,6 +7,15 @@
   position: relative;
 }
 
+.jumbotron-extend-session {
+  background-image: url("log-in.jpg");
+  background-size: cover;
+  height: 100vh;
+  min-height: 300px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 .text-center {
   position: absolute;
   top: 50%;
