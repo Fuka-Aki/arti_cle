@@ -1,42 +1,119 @@
-<ul class='room-lists'>
-  <% if @rooms.present? %>
-    <% @rooms.each do |room| %>
-      <li class='list'>
-        <%= link_to room_messages_path(room.id) do %>
-          <div class='room-info'>
-            <h3 class='room-name'>
-              <div class='room_name'>
-                <%= room.artist_name %>
-              </div>
-              <% if !Favorite.exists?(user_id: current_user.id, room_id: room.id) %>
-                <%= link_to 'いいね外す', '#', method: :DELETE, remote: true %>
-              <% else %>
-                <%= link_to 'いいねする', '#', method: :POST, remote: true %>
-              <% end %>
-            </h3>
+<div class="jumbotron">
+  <h1>Arti<span class="glyphicon glyphicon-cd" aria-hidden="true"></span>Cle</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+
+<%# アーティストランキングの表示 %>
+<div class="Artist-Ranking">
+  <div class="page-header">
+    <h2>Artist Ranking</h2>
+  </div>
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#">総合ランキング</a></li>
+    <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+      カテゴリ別 ランキング <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="#">ポップス</a></li>
+      <li><a href="#">ロック</a></li>
+      <li><a href="#">ダンス</a></li>
+      <li><a href="#">ジャズ</a></li>
+      <li><a href="#">ラテン</a></li>
+      <li><a href="#">クラシック</a></li>
+      <li><a href="#">行進曲</a></li>
+      <li><a href="#">ワールド</a></li>
+      <li><a href="#">声楽</a></li>
+      <li><a href="#">邦楽</a></li>
+      <li><a href="#">ア・カペラ</a></li>
+    </ul>
+    </li>
+  </ul>
+  <div class="ranking">
+    <%= image_tag 'No.1.jpg' %>
+    <span>No.1</span>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag "sample.jpg", class: "room-img" %>
+      <div class="caption">
+        <h3>好きなアーティストのチャットを作ろう！</h3>
+        <p>テーマ：テーマを決めよう</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="ranking">
+    <%= image_tag 'No.2.jpg' %>
+    <span>No.2</span>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag "sample.jpg", class: "room-img" %>
+      <div class="caption">
+        <h3>好きなアーティストのチャットを作ろう！</h3>
+        <p>テーマ：テーマを決めよう</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="ranking">
+    <%= image_tag 'No.3.jpg' %>
+    <span>No.3</span>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag "sample.jpg", class: "room-img" %>
+      <div class="caption">
+        <h3>好きなアーティストのチャットを作ろう！</h3>
+        <p>テーマ：テーマを決めよう</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# 投稿したアーティストを表示 %>
+<div class="pickup-artist">
+  <div class="page-header">
+    <h2>Pick Up Artist</h2>
+  </div>
+  <div class="row">
+    <% if @rooms.present? %>
+      <% @rooms.each do |room| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <%= image_tag room.image, class: "room-img" if room.image.attached?  %>
+          <div class="caption">
+            <%= room.artist_name %>
+            <p>...</p>
+            <p><a href="#" class="btn btn-primary" role="button"><%= room.artist_name %></a> <a href="#" class="btn btn-default" role="button">Button</a></p>
           </div>
-          <div class='room-img-content'>
-            <%= image_tag room.image, class: "room-img" if room.image.attached?  %>
-          </div>
-           <div class='room_genre'>
-            <%= room.genre.name %>
-          </div>
-          <div class='room_create_user'>
-            <%= room.user.nickname %>
-          </div>
-        <% end %>
-      </li>
-    <% end %>
-  <% else %>
-    <li class='list'>
-      <%= link_to new_room_path, class: 'NewPost' do %>
-      <%= image_tag "profile.jpg", class: "item-img" %>
-      <div class='room-info'>
-        <h3 class='room-name'>
-          好きなアーティストのチャットを作成しましょう！
-        </h3>
+        </div>
       </div>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+    <% else %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag "sample.jpg", class: "room-img" %>
+        <div class="caption">
+          <h3>好きなアーティストのチャットを作ろう！</h3>
+          <p>テーマ：テーマを決めよう</p>
+          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <%= image_tag "sample.jpg", class: "room-img" %>
+        <div class="caption">
+          <h3>チャットに参加して皆で語り合おう！</h3>
+          <p>...</p>
+          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
