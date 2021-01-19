@@ -78,7 +78,9 @@ You can login by pressing the guest user
 ![Uploading スクリーンショット 2021-01-19 21.13.37.png…]()
 
 ## Install
-https://github.com/Fuka-Aki/arti_cle.git
+```
+git clone https://github.com/Fuka-Aki/arti_cle.git
+```
 
 ## environment
 - Framework: Ruby on Rails
