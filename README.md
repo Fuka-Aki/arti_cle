@@ -75,7 +75,7 @@ You can login by pressing the guest user
 
 ## Database
 
-![Uploading スクリーンショット 2021-01-19 21.13.37.png…]()
+<img width="574" alt="ER図" src="https://user-images.githubusercontent.com/75027499/105110918-1036fa00-5b03-11eb-8bac-2e1fc8487b76.png">
 
 ## Install
 ```
