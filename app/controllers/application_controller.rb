@@ -3,12 +3,11 @@ class ApplicationController < ActionController::Base
 
   def check_guest
     email = @user.email || params[:user][:email].downcase
-    if email == 'guest@sample.com'
-      redirect_to user_path(@user.id), alert: 'ゲストユーザーの変更・削除はできません。'
-    end
+    redirect_to user_path(@user.id), alert: 'ゲストユーザーの変更・削除はできません。' if email == 'guest@sample.com'
   end
 
   private
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
   end
