@@ -1,14 +1,14 @@
-<div class="jumbotron" style="background: url(<%= asset_path "rooms.jpg" %>);">
-  <h1>Arti<span class="glyphicon glyphicon-cd" aria-hidden="true"></span>Cle</h1>
-  <p>...</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1>Arti<span class="glyphicon glyphicon-cd" aria-hidden="true"></span>Cle</h1>
+    <p>...</p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  </div>
 </div>
 
 <%# アーティストランキングの表示 %>
 <div class="Artist-Ranking">
-  <div class="page-header">
-    <h2>Artist Ranking</h2>
-  </div>
+  <div class="page-header">Artist Ranking</div>
   <ul class="nav nav-tabs">
     <li role="presentation" class="active"><a href="#">総合ランキング</a></li>
     <li role="presentation" class="dropdown">
@@ -76,8 +76,7 @@
 
 <%# 投稿したアーティストを表示 %>
 <div class="pickup-artist">
-  <div class="page-header">
-    <h2>Pick Up Artist</h2>
+  <div class="page-header">Pick Up Artist</div>
   </div>
   <div class="row">
     <% if @rooms.present? %>

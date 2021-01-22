@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <% if user_signed_in? %> 
       <ul class="nav navbar-nav">
-        <li><%= link_to 'New Post', '#', class: "NewPost" %></li>
+        <li><%= link_to 'New Post', new_room_path, class: "NewPost" %></li>
         <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="input-sm form-control" placeholder="Search">

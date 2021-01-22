@@ -6,7 +6,6 @@ class User < ApplicationRecord
   end
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }, on: :create
 
-  protected
   def self.guest
     find_or_create_by!(email: 'guest@sample.com') do |user|
       user.password = SecureRandom.alphanumeric(6)

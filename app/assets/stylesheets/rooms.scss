@@ -1,4 +1,48 @@
-.jumbotron-extend {
+$title_font: 40px;
+$title_color: gray;
+
+/* rooms#index */
+.jumbotron {
+  background-image: url(rooms.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.page-header {
+  text-align: center;
+  font-size: $title_font;
+  color: $title_color;
+}
+
+.ranking {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+/* rooms#new */
+.background-image {
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.select-box {
+  width: 70%;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.preview img {
+  height: 300px;
+  width: 300px;
+  object-fit: contain;
+}
+
+.upload-btn {
+  margin-top: 5px;
+  margin-left: 30%;
 }
