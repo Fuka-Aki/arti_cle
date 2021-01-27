@@ -1,0 +1,164 @@
+$form_height: 70px;
+$header_height: 80px;
+$nav_bar_height: 45px;
+
+.chat_header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: $header_height;
+}
+
+.chat_room_name {
+  font-size: 50px;
+  text-align: center;
+  display: flex;
+  
+}
+
+.chat_room_name p {
+  margin-left: 15px;
+}
+
+.chat_end_btn {
+  background-color: skyblue;
+  height: 50%;
+  padding: 10px;
+  align-content: center;
+}
+
+.back-info {
+  color: whitesmoke;
+}
+
+.message {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.messages {
+  height: calc(100vh - #{$form_height + $header_height + $nav_bar_height});
+  width: 100%;
+  overflow: scroll;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  background-color: whitesmoke;
+}
+
+.input_form {
+  display: flex;
+  align-items: center;
+  height: $form_height;
+}
+
+.form_message {
+  width: calc(100% - 50px);
+  background-color: white;
+  height: 80%;
+}
+
+.message-picture {
+  color: aqua;
+  font-size: 55px;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.send_btn {
+  padding: 10px 10px;
+  background-color: white;
+  margin-left: 5px;
+  height: 80%;
+}
+
+// トーク
+.content {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.message-date {
+  font-size: 10px;
+}
+
+.content .message-user {
+  float: left;
+  margin: 10px -100px 15px 5px;
+  width: 80px;
+  font-size: 10px;
+  color: white;
+}
+
+.content .lower-message {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.message-date {
+  color: white;
+}
+
+.message-content {
+  display: inline-block;
+  position: relative; 
+  margin: 5px 0 0 40px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #d7ebfe;
+}
+
+.message-content:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px; 
+  left: -20px;
+  border: 10px solid transparent;
+  border-right: 10px solid #d7ebfe;
+}
+// 自分のコメント
+.my-content {
+  margin-bottom: 10px;
+  width: 100%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-message-date {
+  font-size: 10px;
+  color: white;
+}
+
+.my-message {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+
+.my-message-content {
+  display: inline-block;
+  position: relative; 
+  margin: 5px 0 0 5px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: whitesmoke;
+}
+
+.my-message-content:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px; 
+  right: -20px;
+  border: 10px solid transparent;
+  border-left: 10px solid whitesmoke;
+}

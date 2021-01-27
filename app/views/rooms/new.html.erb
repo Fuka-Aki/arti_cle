@@ -1,5 +1,6 @@
 <div class="background-image" style="background: url(<%= asset_path "favorite-artist.jpg" %>);">
   <%=form_with model: @room, method: :post, local: true do |f|%>
+  <%= text_field_tag 'room[user_ids][]', "#{current_user.id}", type: 'hidden' %>
   <div class="text-center">
     <div class="form-title">Create Artist Rooms</div>
     <%= render "shared/error_messages", model: @room %>

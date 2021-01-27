@@ -36,11 +36,10 @@
   </div>
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
+      <div class="Artist">Aqua Timez</div>
       <%= image_tag "sample.jpg", class: "room-img" %>
       <div class="caption">
-        <h3>好きなアーティストのチャットを作ろう！</h3>
-        <p>テーマ：テーマを決めよう</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <%= link_to 'チャットに参加', '#', class: "btn btn-primary", role: "button" %>
       </div>
     </div>
   </div>
@@ -50,10 +49,9 @@
   </div>
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
+      <div class="Artist">SUPER BEAVER</div>
       <%= image_tag "sample.jpg", class: "room-img" %>
       <div class="caption">
-        <h3>好きなアーティストのチャットを作ろう！</h3>
-        <p>テーマ：テーマを決めよう</p>
         <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
       </div>
     </div>
@@ -64,10 +62,9 @@
   </div>
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
+      <div class="Artist">Uver World</div>
       <%= image_tag "sample.jpg", class: "room-img" %>
       <div class="caption">
-        <h3>好きなアーティストのチャットを作ろう！</h3>
-        <p>テーマ：テーマを決めよう</p>
         <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
       </div>
     </div>
@@ -83,11 +80,10 @@
       <% @rooms.each do |room| %>
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
+          <%= room.artist_name %>
           <%= image_tag room.image, class: "room-img" if room.image.attached?  %>
           <div class="caption">
-            <%= room.artist_name %>
-            <p>...</p>
-            <p><a href="#" class="btn btn-primary" role="button"><%= room.artist_name %></a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          <%= link_to 'チャットに参加', room_messages_path(room), class: "btn btn-primary", role: "button" %>
           </div>
         </div>
       </div>
@@ -98,7 +94,6 @@
         <%= image_tag "sample.jpg", class: "room-img" %>
         <div class="caption">
           <h3>好きなアーティストのチャットを作ろう！</h3>
-          <p>テーマ：テーマを決めよう</p>
           <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
         </div>
       </div>
@@ -108,8 +103,7 @@
         <%= image_tag "sample.jpg", class: "room-img" %>
         <div class="caption">
           <h3>チャットに参加して皆で語り合おう！</h3>
-          <p>...</p>
-          <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          <p><a href="#" class="btn btn-primary" role="button">Button</a><br><a href="#" class="btn btn-default" role="button">Button</a></p>
         </div>
       </div>
     </div>
