@@ -83,7 +83,7 @@
           <%= room.artist_name %>
           <%= image_tag room.image, class: "room-img" if room.image.attached?  %>
           <div class="caption">
-          <%= link_to 'チャットに参加', room_messages_path(room), class: "btn btn-primary", role: "button" %>
+          <%= link_to 'チャットに参加', join_room_path(room), class: "btn btn-primary", role: "button" %>
           </div>
         </div>
       </div>

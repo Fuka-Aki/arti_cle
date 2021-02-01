@@ -3,11 +3,11 @@
     <div class="chat_room_name">
       <%= @room.artist_name %><p>Room</p>
     </div>
-    <% if current_user.id == @user %>
+    <% if current_user.id == @user.id %>
     <div class="chat_end_btn">
-      <%= link_to "ルームを編集する", '#' %>
-      <%= link_to "ルームを削除する", '#', method: :delete %>
-      <%= link_to "一覧ページに戻る", rooms_path %>
+      <%= link_to "ルーム編集", '#', class: "back-info" %>
+      <%= link_to "ルーム削除", '#', method: :delete, class: "back-info" %>
+      <%= link_to "一覧ページへ", rooms_path, class: "back-info" %>
     </div>
     <% else %>
     <div class="chat_end_btn">
@@ -15,7 +15,7 @@
     </div>
     <% end %>
   </div>
-  <div class="messages" id="messages">
+  <div class="messages" id="messages" style="background-image: url('<%= rails_blob_url(@room.image) %>');">
     <%= render partial: 'shared/message' %>
   </div>
   <%= form_with model: [@room, @message], method: :post, id: "message_form" do |f| %>

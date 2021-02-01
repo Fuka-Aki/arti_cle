@@ -4,7 +4,7 @@ $nav_bar_height: 45px;
 
 .chat_header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: $header_height;
 }
@@ -29,18 +29,16 @@ $nav_bar_height: 45px;
 
 .back-info {
   color: whitesmoke;
-}
-
-.message {
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  margin-right: 5px;
 }
 
 .messages {
   height: calc(100vh - #{$form_height + $header_height + $nav_bar_height});
   width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   overflow: scroll;
 }
 
