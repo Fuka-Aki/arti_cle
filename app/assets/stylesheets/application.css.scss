@@ -4,3 +4,17 @@
 @import "./rooms";
 @import "./users";
 @import "./messages";
+@import "./homes";
+
+.container {
+  background-color: black;
+}
+
+.navbar-brand {
+  color: skyblue;
+}
+
+.nav.navbar-nav.navbar-right li a {
+  color: skyblue;
+}
+
