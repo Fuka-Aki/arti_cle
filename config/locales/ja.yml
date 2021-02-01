@@ -1,13 +1,18 @@
 ja:
- activerecord:
-   attributes:
-     user:
-       nickname: ニックネーム
-     room:
-       artist_name: アーティスト名
-       genre_id: ジャンル
-       image: 画像
-       user: ユーザー
-     message:
-       text: テキスト
-       image: 画像
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      room:
+        artist_name: アーティスト名
+        genre_id: ジャンル
+        image: 画像
+        user: ユーザー
+      message:
+        content: テキスト
+        image: 画像
+        room: ルーム
+        user: ユーザー
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"

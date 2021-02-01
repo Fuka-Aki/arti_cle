@@ -32,11 +32,6 @@ RSpec.describe Room, type: :model do
         @room.valid?
         expect(@room.errors.full_messages).to include("画像を入力してください")
       end
-      it 'userが紐付いていないと保存できないこと' do
-        @room.user = nil
-        @room.valid?
-        expect(@room.errors.full_messages).to include("ユーザーを入力してください")
-      end
     end
   end
 end

@@ -10,7 +10,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.integer :prefecture_id
       t.integer :generation_id
       t.integer :gender_id
-      t.references :rooms
 
       ## Recoverable
       t.string   :reset_password_token

@@ -1,0 +1,30 @@
+<div class="chat-room">
+  <div class="chat_header">
+    <div class="chat_room_name">
+      <%= @room.artist_name %><p>Room</p>
+    </div>
+    <% if current_user.id == @user.id %>
+    <div class="chat_end_btn">
+      <%= link_to "ルーム編集", '#', class: "back-info" %>
+      <%= link_to "ルーム削除", '#', method: :delete, class: "back-info" %>
+      <%= link_to "一覧ページへ", rooms_path, class: "back-info" %>
+    </div>
+    <% else %>
+    <div class="chat_end_btn">
+      <%= link_to "一覧ページに戻る", rooms_path, class: "back-info" %>
+    </div>
+    <% end %>
+  </div>
+  <div class="messages" id="messages" style="background-image: url('<%= rails_blob_url(@room.image) %>');">
+    <%= render partial: 'shared/message' %>
+  </div>
+  <%= form_with model: [@room, @message], method: :post, id: "message_form" do |f| %>
+    <div class="input_form">
+      <%= f.text_field :content, class: 'form_message', rows: '1', id: "content", placeholder: 'メッセージを送りましょう！' %>
+        <span class="glyphicon glyphicon-picture message-picture"></span>
+        <%= f.file_field :image, class: 'hidden' %>
+      </label>
+      <%= f.submit '送信', class: 'send_btn', id: "submit" %>
+    </div>
+  <% end %>
+</div>

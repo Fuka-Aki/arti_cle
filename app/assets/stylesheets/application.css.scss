@@ -3,6 +3,7 @@
 @import "./reset";
 @import "./rooms";
 @import "./users";
+@import "./messages";
 @import "./homes";
 
 .container {
@@ -16,3 +17,4 @@
 .nav.navbar-nav.navbar-right li a {
   color: skyblue;
 }
+
