@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
-  before_action :move_to_index
+  before_action :move_to_index, only:[:index, :new, :create]
   def index
-    @rooms = Room.all
+    @rooms = Room.all.order('artist_name ASC')
   end
 
   def new
@@ -17,10 +17,20 @@ class RoomsController < ApplicationController
     end
   end
 
+  def join
+    @room = Room.find(params[:id])
+    if !@room.users.include?(current_user)
+      @room.users << current_user
+      redirect_to room_messages_path(@room)
+    else
+      redirect_to room_messages_path(@room)
+    end
+  end
+
   private
 
   def room_params
-    params.require(:room).permit(:artist_name, :genre_id, :image).merge(user_id: current_user.id)
+    params.require(:room).permit(:artist_name, :genre_id, :image, user_ids:[])
   end
 
   def move_to_index

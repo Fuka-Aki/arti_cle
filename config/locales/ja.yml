@@ -11,3 +11,7 @@ ja:
      message:
        text: テキスト
        image: 画像
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"

@@ -3,7 +3,6 @@ class CreateRooms < ActiveRecord::Migration[6.0]
     create_table :rooms do |t|
       t.string  :artist_name, null: false
       t.integer :genre_id, null: false
-      t.references :user
       t.timestamps
     end
   end
