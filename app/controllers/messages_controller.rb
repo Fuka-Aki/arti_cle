@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:index, :create]
+
   def index
-    @user = RoomUser.where(user_id: @room).first
+    @user = @room.user_id
     @messages = @room.messages.includes(:user).order(:id)
     @message = current_user.messages.build
   end

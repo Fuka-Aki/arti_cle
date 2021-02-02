@@ -30,7 +30,7 @@ class RoomsController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:artist_name, :genre_id, :image, user_ids:[])
+    params.require(:room).permit(:artist_name, :genre_id, :image, user_ids:[]).merge(user_id: current_user.id)
   end
 
   def move_to_index
