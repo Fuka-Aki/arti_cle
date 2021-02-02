@@ -64,4 +64,4 @@ gem 'mini_magick'
 gem 'pry-rails'
 gem 'rails-i18n'
 gem 'sassc-rails', '>= 2.1.0'
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'kaminari'
