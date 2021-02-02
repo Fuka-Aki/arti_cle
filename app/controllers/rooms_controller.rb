@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   before_action :move_to_index, only:[:index, :new, :create]
   def index
-    @rooms = Room.all.order('artist_name ASC')
+    @rooms = Room.all.order(artist_name: :ASC).page(params[:page]).per(9)
   end
 
   def new
