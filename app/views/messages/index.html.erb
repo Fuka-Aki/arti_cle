@@ -3,7 +3,7 @@
     <div class="chat_room_name">
       <%= @room.artist_name %><p>Room</p>
     </div>
-    <% if current_user.id == @user.id %>
+    <% if current_user.id == @user %>
     <div class="chat_end_btn">
       <%= link_to "ルーム編集", '#', class: "back-info" %>
       <%= link_to "ルーム削除", '#', method: :delete, class: "back-info" %>
