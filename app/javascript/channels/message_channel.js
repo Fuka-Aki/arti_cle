@@ -16,7 +16,6 @@ consumer.subscriptions.create("MessageChannel", {
     const currentUser = `${data.user.id}`
     const sendUser = `${data.content.user_id}`
     if (currentUser == sendUser) {
-      debugger
       const HTML = `
       <div class="my-content">
         <div class="my-message">
@@ -34,7 +33,6 @@ consumer.subscriptions.create("MessageChannel", {
       messages.insertAdjacentHTML('beforeend', HTML)
       newMessage.value=''
     } else {
-      debugger
       const HTML = `
       <div class="content">
         <div class="upper-message">

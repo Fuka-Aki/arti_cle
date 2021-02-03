@@ -9,7 +9,7 @@
       <div class="my-message-content" >
         <%= simple_format(h message.content) %>
       </div>
-      <%= image_tag message.image.variant(resize: '500x500'), class: 'my-message-image' if message.image.attached? %>
+      <%# <%= image_tag message.image.variant(resize: '500x500'), class: 'my-message-image' if message.image.attached? %>
     </div>
   </div>
   <% else %>
@@ -26,7 +26,7 @@
       <div class="message-date">
         <%= l message.created_at %>
       </div>
-      <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+      <%# <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
     </div>
   </div>
   <% end %>
