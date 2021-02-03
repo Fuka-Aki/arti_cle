@@ -21,9 +21,10 @@
   <%= form_with model: [@room, @message], method: :post, id: "message_form" do |f| %>
     <div class="input_form">
       <%= f.text_field :content, class: 'form_message', rows: '1', id: "content", placeholder: 'メッセージを送りましょう！' %>
+      <%# <label>
         <span class="glyphicon glyphicon-picture message-picture"></span>
         <%= f.file_field :image, class: 'hidden' %>
-      </label>
+      <%# </label> %>
       <%= f.submit '送信', class: 'send_btn', id: "submit" %>
     </div>
   <% end %>
