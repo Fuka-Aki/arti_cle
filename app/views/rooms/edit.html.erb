@@ -1,0 +1,37 @@
+<div class="background-image" style="background: url(<%= asset_path "favorite-artist.jpg" %>);">
+  <%=form_with model: @room, method: :patch, local: true do |f|%>
+  <div class="text-center">
+    <div class="form-title">Edit Artist Rooms</div>
+
+    <%= render "shared/error_messages", model: @room %>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">Artist Name</label>
+        <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
+      </div>
+      <%= f.text_area :artist_name, class:"input-default", id:"artist-name", placeholder:"アーティスト名", maxlength:"40" %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">Genre</label>
+        <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+      </div>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"genre"}) %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">Artist Image</label>
+        <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+      </div>
+      <label class="click-upload">
+        <%= f.file_field :image, class: 'upload-btn' %>
+      </label>
+      <div id='image-list' class="preview"></div>
+    </div>
+    <div class='actions'>
+      <%= f.submit "Edit room", class: 'btn-group btn-warning btn-lg'%>
+    </div>
+  </div>
+  <% end %>
+</div>
