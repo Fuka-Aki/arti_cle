@@ -90,7 +90,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   ActionCable.server.config.disable_request_forgery_protection = true
-  config.action_cable.url = "wss://arti-cle.herokuapp.com/cable" 
+  config.action_cable.url = 'wss://arti-cle.herokuapp.com/cable'
   config.action_cable.allowed_request_origins = ['https://arti-cle.herokuapp.com', 'http://arti-cle.herokuapp.com']
 
   # Inserts middleware to perform automatic connection switching.

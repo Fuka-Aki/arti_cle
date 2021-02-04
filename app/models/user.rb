@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :rooms, through: :room_users
   has_many :messages
   has_one_attached :image
-  
+
   def self.guest
     find_or_create_by!(email: 'guest@sample.com') do |user|
       user.password = SecureRandom.alphanumeric(6)

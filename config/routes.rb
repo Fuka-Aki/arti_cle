@@ -6,10 +6,10 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   root to: 'homes#index'
-  resources :rooms, only: %i[index new create] do
+  resources :rooms, only: %i[index new create edit update] do
     member do
       get :join
     end
-    resources :messages, only: [:index, :create]
+    resources :messages, only: %i[index create]
   end
 end

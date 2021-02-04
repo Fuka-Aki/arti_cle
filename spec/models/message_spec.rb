@@ -27,19 +27,19 @@ RSpec.describe Message, type: :model do
         @message.content = nil
         @message.image = nil
         @message.valid?
-        expect(@message.errors.full_messages).to include("テキストを入力してください")
+        expect(@message.errors.full_messages).to include('テキストを入力してください')
       end
 
       it 'roomが紐付いていないと保存できないこと' do
         @message.room = nil
         @message.valid?
-        expect(@message.errors.full_messages).to include("ルームを入力してください")
+        expect(@message.errors.full_messages).to include('ルームを入力してください')
       end
 
       it 'userが紐付いていないと保存できないこと' do
         @message.user = nil
         @message.valid?
-        expect(@message.errors.full_messages).to include("ユーザーを入力してください")
+        expect(@message.errors.full_messages).to include('ユーザーを入力してください')
       end
     end
   end
