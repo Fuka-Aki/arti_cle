@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   root to: 'homes#index'
-  resources :rooms, only: %i[index new create edit update] do
+  resources :rooms, only: %i[index new create edit update destroy] do
     member do
       get :join
     end
