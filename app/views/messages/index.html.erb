@@ -6,7 +6,7 @@
     <% if current_user.id == @user %>
     <div class="chat_end_btn">
       <%= link_to "ルーム編集", edit_room_path(@room), class: "back-info" %>
-      <%= link_to "ルーム削除", '#', method: :delete, class: "back-info" %>
+      <%= link_to "ルーム削除", room_path(@room), method: :delete, class: "back-info" %>
       <%= link_to "一覧ページへ", rooms_path, class: "back-info" %>
     </div>
     <% else %>

@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   before_action :move_to_index, only: %i[index new create]
-  before_action :set_room, only: %i[edit update]
+  before_action :set_room, only: %i[edit update destroy]
 
   def index
     @rooms = Room.all.order(artist_name: :ASC).page(params[:page]).per(9)
@@ -19,8 +19,7 @@ class RoomsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @room.update(room_params)
@@ -28,6 +27,11 @@ class RoomsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @room.destroy
+    redirect_to rooms_path
   end
 
   def join
@@ -49,6 +53,7 @@ class RoomsController < ApplicationController
   def move_to_index
     redirect_to root_path unless user_signed_in?
   end
+
   def set_room
     @room = Room.find(params[:id])
   end
