@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h1><%= @user.nickname %>'s Profile</h1>
+</div>
+<div class="my-page row">
+  <div class="my-image">
+    <% if @user.image.attached? %>
+      <%= image_tag @user.image, class: 'profile-image' %>
+    <% else %>
+      <%= image_tag "profile.jpg", class: 'profile-image' %>
+    <% end %>
+  </div>
+  <% if current_user.id == @user.id %>
+    <div class="edit-button">
+      <%= link_to 'edit profile', edit_user_path, class: "btn-group btn-info btn-lg"%>
+    </div>
+  <% end %>
+
+  <div class="panel panel-warning">
+    <div class="panel-heading">Profile</div>
+    <div class="panel-body">
+      <% if @user.introduction.present? %>
+        <%= simple_format(h @user.introduction) %>
+      <% else %>
+        <div class="message">--</div>
+      <% end %>
+    </div>
+    <div class="panel-heading">Address</div>
+    <div class="panel-body">
+      <% if @user.prefecture_id.present? %>
+        <%= @user.prefecture.name %>在住
+      <% else %>
+        <div class="message">--</div>
+      <% end %>
+    </div>
+    <div class="panel-heading">Gender</div>
+    <div class="panel-body">
+      <% if @user.gender_id.present? %>
+        <%= @user.gender.name %>
+      <% else %>
+        <div class="message">--</div>
+      <% end %>
+    </div>
+    <div class="panel-heading">Generation</div>
+    <div class="panel-body">
+      <% if @user.generation_id.present? %>
+        <%= @user.generation.name %>
+      <% else %>
+        <div class="message">--</div>
+      <% end %>
+    </div>
+  </div>
+</div>
