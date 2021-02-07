@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     end
     resources :messages, only: %i[index create]
   end
+  resources :users, only: [:show, :edit, :update]
 end
