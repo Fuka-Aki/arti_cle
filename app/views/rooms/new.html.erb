@@ -24,10 +24,19 @@
         <label class="form-text">Artist Image</label>
         <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
       </div>
-      <label class="click-upload">
-        <%= f.file_field :image, class: 'upload-btn' %>
+      <% if @room.image.present? %>
+      <label class="form-text-wrap">
+        <%= image_tag @user.image, alt: "artist-image", id: "image", size: "300" %>
+        <%= f.file_field :image, class: "hidden" %>
+        <div id='image-list' class="preview"></div>
       </label>
-      <div id='image-list' class="preview"></div>
+      <% else %>
+      <label class="form-text-wrap">
+        <%= image_tag "profile.jpg", alt: "artist-image", id: "image", size: "300" %>
+        <%= f.file_field :image, class: "hidden" %>
+        <div id='image-list' class="preview"></div>
+      </label>
+      <% end %>
     </div>
     <div class='actions'>
       <%= f.submit "Create room", class: 'btn-group btn-warning btn-lg'%>

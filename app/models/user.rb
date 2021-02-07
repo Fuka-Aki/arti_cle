@@ -17,4 +17,9 @@ class User < ApplicationRecord
       user.nickname = 'Guest'
     end
   end
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :prefecture
+  belongs_to :gender
+  belongs_to :generation
 end
