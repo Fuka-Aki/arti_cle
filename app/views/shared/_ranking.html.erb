@@ -1,0 +1,101 @@
+<div class="page-header">Artist Ranking</div>
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">総合ランキング</a></li>
+  <li role="presentation" class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">
+    ジャンル別 ランキング <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="#">ポップス</a></li>
+    <li><a href="#">ロック</a></li>
+    <li><a href="#">ダンス</a></li>
+    <li><a href="#">ジャズ</a></li>
+    <li><a href="#">ラテン</a></li>
+    <li><a href="#">クラシック</a></li>
+    <li><a href="#">行進曲</a></li>
+    <li><a href="#">ワールド</a></li>
+    <li><a href="#">声楽</a></li>
+    <li><a href="#">邦楽</a></li>
+    <li><a href="#">ア・カペラ</a></li>
+  </ul>
+  </li>
+</ul>
+<div class="row">
+<% if ranking_artist.present? %>
+  <div class="ranking">
+    <div class="num_one">
+      <%= image_tag 'No.1.png' %>
+      <span class="one">No.1</span>
+    </div>
+    <div class="num_two">
+      <%= image_tag 'No.2.png' %>
+      <span class="two">No.2</span>
+    </div>
+    <div class="num_three">
+      <%= image_tag 'No.3.png' %>
+      <span class="three">No.3</span>
+    </div>
+  </div>
+  <% @ranking_artist.each do |room| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <div class="Artist"><%= room.artist_name %></div>
+        <%= image_tag room.image, class: "room-img" if room.image.attached?  %>
+        <p><%= room.genre.name %></p>
+        <div class="caption">
+          <%= link_to 'チャットに参加', join_room_path(room), class: "btn btn-primary", role: "button" %>
+          <div id="favorites_buttons_<%= room.id %>" class="favorite">
+            <%= render 'favorites/favorite', room: room %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="col-sm-6 col-md-4">
+    <div class="ranking">
+      <%= image_tag 'No.1.png' %>
+      <span class="one">No.1</span>
+    </div>
+    <div class="thumbnail">
+      <div class="Artist">Aqua Timez</div>
+      <%= image_tag "sample.jpg", class: "room-img" %>
+      <div class="caption">
+        <p>ジャンル名</p>
+        <%= link_to 'チャットに参加', '#', class: "btn btn-primary", role: "button" %>
+        <%= link_to '', '#', class: "glyphicon glyphicon-heart", role: "button" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="ranking">
+      <%= image_tag 'No.2.png' %>
+      <span class="two">No.2</span>
+    </div>
+    <div class="thumbnail">
+      <div class="Artist">SUPER BEAVER</div>
+      <%= image_tag "sample.jpg", class: "room-img" %>
+      <div class="caption">
+        <p>ジャンル名</p>
+        <%= link_to 'チャットに参加', '#', class: "btn btn-primary", role: "button" %>
+        <%= link_to '', '#', class: "glyphicon glyphicon-heart", role: "button" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="ranking">
+      <%= image_tag 'No.3.png' %>
+      <span class="three">No.3</span>
+    </div>
+    <div class="thumbnail">
+      <div class="Artist">UVERworld</div>
+      <%= image_tag "sample.jpg", class: "room-img" %>
+      <div class="caption">
+        <p>ジャンル名</p>
+        <%= link_to 'チャットに参加', '#', class: "btn btn-primary", role: "button" %>
+        <%= link_to '', '#', class: "glyphicon glyphicon-heart", role: "button" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

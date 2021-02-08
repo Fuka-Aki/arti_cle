@@ -4,6 +4,7 @@ class RoomsController < ApplicationController
 
   def index
     @rooms = Room.all.order(artist_name: :ASC).page(params[:page]).per(9)
+    @ranking_artist = Room.find(Favorite.group(:room_id).order('count(room_id) desc').limit(3).pluck(:room_id))
   end
 
   def new

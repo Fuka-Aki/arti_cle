@@ -22,6 +22,8 @@ $title_color: #FFCC00;
 
 
 .ranking {
+  display: flex;
+  justify-content: space-around;
   font-size: 25px;
   margin: 10px 10px;
   .one {
