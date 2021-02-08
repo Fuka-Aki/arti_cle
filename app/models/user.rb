@@ -9,7 +9,12 @@ class User < ApplicationRecord
   has_many :room_users, dependent: :destroy
   has_many :rooms, through: :room_users
   has_many :messages
+  has_many :favorites, dependent: :destroy
   has_one_attached :image
+
+  def already_favorited?(room)
+    favorites.exists?(room_id: room.id)
+  end
 
   def self.guest
     find_or_create_by!(email: 'guest@sample.com') do |user|

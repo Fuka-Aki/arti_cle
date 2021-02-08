@@ -46,12 +46,19 @@ $title_color: #FFCC00;
   height: 250px;
 }
 
-.caption p{
+.thumbnail p{
   text-align: right;
 }
 
-.caption.glyphicon-heart {
-  padding-left: 100px;
+.caption {
+  display: flex;
+  justify-content: space-between;
+  .glyphicon-heart {
+    font-size: 20px;
+  }
+  span {
+    font-size: 20px;
+  }
 }
 
 .pagination {

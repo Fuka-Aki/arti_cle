@@ -8,8 +8,7 @@ class Room < ApplicationRecord
   has_many :room_users, dependent: :destroy
   has_many :users, through: :room_users
   has_many :messages, dependent: :destroy
-  # has_many :favorites, dependent: :destroy
-  # has_many :favorite_users, through: :favorites, source: :user
+  has_many :favorites, dependent: :destroy
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
