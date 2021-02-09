@@ -24,6 +24,14 @@
         <div class="message">--</div>
       <% end %>
     </div>
+    <div class="panel-heading">Favorite Artist</div>
+    <div class="panel-body">
+      <% if @favorite_list.present? %>
+        <% @favorite_list.each do |room| %>
+          <%= room.artist_name %>
+        <% end %>
+      <% end%>
+    </div>
     <div class="panel-heading">Address</div>
     <div class="panel-body">
       <% if @user.prefecture_id.present? %>
