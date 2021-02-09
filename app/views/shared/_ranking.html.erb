@@ -21,7 +21,7 @@
   </li>
 </ul>
 <div class="row">
-<% if ranking_artist.present? %>
+<% if all_ranks.present? %>
   <div class="ranking">
     <div class="num_one">
       <%= image_tag 'No.1.png' %>
@@ -36,7 +36,7 @@
       <span class="three">No.3</span>
     </div>
   </div>
-  <% @ranking_artist.each do |room| %>
+  <% all_ranks.each do |room| %>
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <div class="Artist"><%= room.artist_name %></div>
@@ -52,11 +52,21 @@
     </div>
   <% end %>
 <% else %>
-  <div class="col-sm-6 col-md-4">
-    <div class="ranking">
+  <div class="ranking">
+    <div class="num_one">
       <%= image_tag 'No.1.png' %>
       <span class="one">No.1</span>
     </div>
+    <div class="num_two">
+      <%= image_tag 'No.2.png' %>
+      <span class="two">No.2</span>
+    </div>
+    <div class="num_three">
+      <%= image_tag 'No.3.png' %>
+      <span class="three">No.3</span>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       <div class="Artist">Aqua Timez</div>
       <%= image_tag "sample.jpg", class: "room-img" %>
@@ -68,10 +78,6 @@
     </div>
   </div>
   <div class="col-sm-6 col-md-4">
-    <div class="ranking">
-      <%= image_tag 'No.2.png' %>
-      <span class="two">No.2</span>
-    </div>
     <div class="thumbnail">
       <div class="Artist">SUPER BEAVER</div>
       <%= image_tag "sample.jpg", class: "room-img" %>
@@ -83,10 +89,6 @@
     </div>
   </div>
   <div class="col-sm-6 col-md-4">
-    <div class="ranking">
-      <%= image_tag 'No.3.png' %>
-      <span class="three">No.3</span>
-    </div>
     <div class="thumbnail">
       <div class="Artist">UVERworld</div>
       <%= image_tag "sample.jpg", class: "room-img" %>
