@@ -22,16 +22,16 @@ https://arti-cle.herokuapp.com/
 
 # DEMO
 ## トップページ画面
-<img width="1160" alt="README" src="https://user-images.githubusercontent.com/75027499/107139750-e7b35a80-6960-11eb-95e4-d99fd7d00b75.png">
+<img width="1160" alt="top-image" src="https://user-images.githubusercontent.com/75027499/107139750-e7b35a80-6960-11eb-95e4-d99fd7d00b75.png">
 
 ## 新規登録画面
-<img width="1159" alt="README2" src="https://user-images.githubusercontent.com/75027499/107141021-775d0700-6969-11eb-9d45-ef432f87b534.png">
+<img width="1159" alt="signup-image" src="https://user-images.githubusercontent.com/75027499/107141021-775d0700-6969-11eb-9d45-ef432f87b534.png">
 
 ## ログイン画面
-<img width="1150" alt="README3" src="https://user-images.githubusercontent.com/75027499/107141056-ae331d00-6969-11eb-92eb-a1e4632ac8b5.png">
+<img width="1150" alt="login-image" src="https://user-images.githubusercontent.com/75027499/107141056-ae331d00-6969-11eb-92eb-a1e4632ac8b5.png">
 
 ## アーティスト一覧画面
-<img width="1150" alt="README3" src=https://user-images.githubusercontent.com/75027499/107457206-fbdf9d80-6b94-11eb-879b-382ae2cef89c.mov>
+<img width="1150" alt="artist-image" src="https://gyazo.com/a99f5b1b9a35ae8b15f128e3b5c8f4db/raw">
 
 # 使用技術(開発環境)
 ## フレームワーク
