@@ -31,7 +31,7 @@ https://arti-cle.herokuapp.com/
 <img width="1150" alt="login-image" src="https://user-images.githubusercontent.com/75027499/107141056-ae331d00-6969-11eb-92eb-a1e4632ac8b5.png">
 
 ## アーティスト一覧画面
-<img width="1150" alt="artist-image" src="https://gyazo.com/a99f5b1b9a35ae8b15f128e3b5c8f4db/raw">
+<img width="1150" alt="artist-image" src="https://i.gyazo.com/a99f5b1b9a35ae8b15f128e3b5c8f4db.gif">
 
 # 使用技術(開発環境)
 ## フレームワーク
@@ -57,7 +57,7 @@ https://arti-cle.herokuapp.com/
 
 # ER図
 
-<img width="574" alt="ER図" src="https://user-images.githubusercontent.com/75027499/105110918-1036fa00-5b03-11eb-8bac-2e1fc8487b76.png">
+<img width="577" alt="ER図" src="https://user-images.githubusercontent.com/75027499/107758434-3484a000-6d6a-11eb-8592-2872330be2cb.png">
 
 # テーブル設計
 
