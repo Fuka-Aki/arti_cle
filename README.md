@@ -30,6 +30,9 @@ https://arti-cle.herokuapp.com/
 ## ログイン画面
 <img width="1150" alt="README3" src="https://user-images.githubusercontent.com/75027499/107141056-ae331d00-6969-11eb-92eb-a1e4632ac8b5.png">
 
+## アーティスト一覧画面
+<img width="1150" alt="README3" src=https://user-images.githubusercontent.com/75027499/107457206-fbdf9d80-6b94-11eb-879b-382ae2cef89c.mov>
+
 # 使用技術(開発環境)
 ## フレームワーク
 - Ruby on Rails(6.0.0)
