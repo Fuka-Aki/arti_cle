@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   end
   root to: 'homes#index'
   resources :rooms, only: %i[index new create edit update destroy] do
+    collection do
+      get :search
+    end
     member do
       get :join
     end

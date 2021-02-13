@@ -1,10 +1,10 @@
 class RoomsController < ApplicationController
-  before_action :move_to_index, only: %i[index new create]
+  before_action :move_to_index, only: %i[index new create search]
   before_action :set_room, only: %i[edit update destroy]
+  before_action :ranking_artist, only: [:index, :search]
 
   def index
     @rooms = Room.all.order(artist_name: :ASC).page(params[:page]).per(9)
-    @all_ranks = Room.find(Favorite.group(:room_id).order('count(room_id) desc').limit(3).pluck(:room_id))
     # @genre_ranks = @all_ranks.find(Room.group(:genre_id).order('count(genre_id) desc').limit(3).pluck(:genre_id))
   end
 
@@ -45,6 +45,9 @@ class RoomsController < ApplicationController
       redirect_to room_messages_path(@room)
     end
   end
+  def search
+    @rooms = Room.search(params[:keyword]).order(artist_name: :ASC).page(params[:page]).per(9)
+  end
 
   private
 
@@ -58,5 +61,8 @@ class RoomsController < ApplicationController
 
   def set_room
     @room = Room.find(params[:id])
+  end
+  def ranking_artist
+    @all_ranks = Room.find(Favorite.group(:room_id).order('count(room_id) desc').limit(3).pluck(:room_id))
   end
 end
