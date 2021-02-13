@@ -12,11 +12,9 @@
       <ul class="nav navbar-nav">
         <li><%= link_to 'お問い合わせ', inquiries_path, class: "inquiry" %></li>
         <li><%= link_to 'New Post', new_room_path, class: "NewPost" %></li>
-        <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="input-sm form-control" placeholder="Search">
-        </div>
-        </form>
+        <%= form_with(url: search_rooms_path, local: true, method: :get, class: "navbar-form navbar-left") do |form| %>
+          <%= form.text_field :keyword, placeholder: "Search", class: "input-sm form-control" %>
+        <% end %>
       </ul>
       <% end %>
       <ul class="nav navbar-nav navbar-right">

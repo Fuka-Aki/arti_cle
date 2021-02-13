@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   end
   root to: 'homes#index'
   resources :rooms, only: %i[index new create edit update destroy] do
+    collection do
+      get :search
+    end
     member do
       get :join
     end
@@ -16,5 +19,5 @@ Rails.application.routes.draw do
   resources :users, only: %i[show edit update] do
     get :favorites, on: :collection
   end
-  resources :inquiries, only:[:index]
+  resources :inquiries, only: [:index]
 end
