@@ -9,6 +9,17 @@ Rails.application.routes.draw do
   resources :rooms, only: %i[index new create edit update destroy] do
     collection do
       get :search
+      get :pops
+      get :rock
+      get :dance
+      get :jazz
+      get :raten
+      get :classic
+      get :march
+      get :world
+      get :vocal_music
+      get :japanese_music
+      get :a_cappella
     end
     member do
       get :join
