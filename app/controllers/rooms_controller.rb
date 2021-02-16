@@ -1,11 +1,10 @@
 class RoomsController < ApplicationController
   before_action :move_to_index, only: %i[index new create search]
   before_action :set_room, only: %i[edit update destroy]
+  before_action :set_rooms, only: %i[index pops rock dance jazz raten classic march world vocal_music japanese_music a_cappella]
   before_action :ranking_artist, only: %i[index search]
 
   def index
-    @rooms = Room.all.order(artist_name: :ASC).page(params[:page]).per(9)
-    # @genre_ranks = @all_ranks.find(Room.group(:genre_id).order('count(genre_id) desc').limit(3).pluck(:genre_id))
   end
 
   def new
@@ -50,6 +49,50 @@ class RoomsController < ApplicationController
     @rooms = Room.search(params[:keyword]).order(artist_name: :ASC).page(params[:page]).per(9)
   end
 
+  def pops
+    @pops_rank = Room.joins(:favorites).group("favorites.room_id").where(genre_id: 1).order('count(room_id) desc').limit(3)
+  end
+
+  def rock
+    @rock_rank = Room.joins(:favorites).group("favorites.room_id").where(genre_id: 2).order('count(room_id) desc').limit(3)
+  end
+
+  def dance
+    @dance_rank = Room.joins(:favorites).group("favorites.room_id").where(genre_id: 3).order('count(room_id) desc').limit(3)
+  end
+
+  def jazz
+    @jazz_rank = Room.joins(:favorites).group("favorites.room_id").where(genre_id: 4).order('count(room_id) desc').limit(3)
+  end
+
+  def raten
+    @raten_rank = Room.joins(:favorites).group("favorites.room_id").where(genre_id: 5).order('count(room_id) desc').limit(3)
+  end
+
+  def classic
+    @classic_rank = Room.joins(:favorites).group("favorites.room_id").where(genre_id: 6).order('count(room_id) desc').limit(3)
+  end
+
+  def march
+    @march_rank = Room.joins(:favorites).group("favorites.room_id").where(genre_id: 7).order('count(room_id) desc').limit(3)
+  end
+
+  def world
+    @world_rank = Room.joins(:favorites).group("favorites.room_id").where(genre_id: 8).order('count(room_id) desc').limit(3)
+  end
+
+  def vocal_music
+    @vocal_music_rank = Room.joins(:favorites).group("favorites.room_id").where(genre_id: 9).order('count(room_id) desc').limit(3)
+  end
+
+  def japanese_music
+    @japanese_music_rank = Room.joins(:favorites).group("favorites.room_id").where(genre_id: 10).order('count(room_id) desc').limit(3)
+  end
+
+  def a_cappella
+    @a_cappella_rank = Room.joins(:favorites).group("favorites.room_id").where(genre_id: 11).order('count(room_id) desc').limit(3)
+  end
+
   private
 
   def room_params
@@ -62,6 +105,10 @@ class RoomsController < ApplicationController
 
   def set_room
     @room = Room.find(params[:id])
+  end
+
+  def set_rooms
+    @rooms = Room.all.order(artist_name: :ASC).page(params[:page]).per(9)
   end
 
   def ranking_artist
