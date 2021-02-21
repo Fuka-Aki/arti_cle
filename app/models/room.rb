@@ -1,6 +1,6 @@
 class Room < ApplicationRecord
   with_options presence: true do
-    validates :artist_name
+    validates :artist_name, uniqueness: true
     validates :genre_id, numericality: { other_than: 0 }
     validates :image
   end

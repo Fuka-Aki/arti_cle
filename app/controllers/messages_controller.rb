@@ -8,9 +8,8 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @user = current_user
     @message = Message.create!(message_params)
-    ActionCable.server.broadcast 'message_channel', content: @message, user: @user,
+    ActionCable.server.broadcast 'message_channel', content: @message, user: current_user,
                                                     time: @message.created_at.strftime('%Y/%m/%d %H:%M:%S')
   end
 
