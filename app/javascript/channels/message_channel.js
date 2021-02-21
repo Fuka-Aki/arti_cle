@@ -20,7 +20,7 @@ consumer.subscriptions.create("MessageChannel", {
       <div class="my-content">
         <div class="my-message">
           <div class="my-message-date">
-          ${messageData}
+            ${messageData}
           </div>
           <div class="my-message-content">
             ${content}

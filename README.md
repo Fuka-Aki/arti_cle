@@ -31,7 +31,7 @@ https://arti-cle.herokuapp.com/
 <img width="1150" alt="login-image" src="https://user-images.githubusercontent.com/75027499/107141056-ae331d00-6969-11eb-92eb-a1e4632ac8b5.png">
 
 ## アーティスト一覧画面
-<img width="1150" alt="artist-image" src="https://i.gyazo.com/a99f5b1b9a35ae8b15f128e3b5c8f4db.gif">
+<img width="1150" alt="artist-image" src="https://user-images.githubusercontent.com/75027499/108620206-e65c5480-746d-11eb-8eeb-cbbd764bde77.gif">
 
 # 使用技術(開発環境)
 ## フレームワーク
@@ -54,6 +54,13 @@ https://arti-cle.herokuapp.com/
 - GitHub
 ## デプロイ環境
 - heroku
+
+# 追加実装予定項目
+- カレンダー機能(マイページに表示予定)
+- ユーザーフォロー機能
+- DM機能(相互フォロー時のみ)
+- アーティスト詳細項目(アーティスト公式ページへのリンクなど表示)
+- メンション機能
 
 # ER図
 
@@ -106,10 +113,10 @@ https://arti-cle.herokuapp.com/
 
 ## rooms テーブル
 
-| Column      | Type    | Options     |
-|-------------|---------|-------------|
-| artist_name | string  | null: false |
-| genre_id    | integer | null: false |
+| Column      | Type    | Options                   |
+|-------------|---------|---------------------------|
+| artist_name | string  | null: false, unique: true |
+| genre_id    | integer | null: false               |
 
 ### Association
 
