@@ -1,6 +1,14 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1>Arti<span class="glyphicon glyphicon-cd" aria-hidden="true"></span>Cle</h1>
+    <p>-Artistの輪を広げよう-</p>
+  </div>
+</div>
+
+<%# アーティストランキングの表示 %>
 <%= render 'shared/ranking_header' %>
 <div class="row">
-<% if all_ranks.present? %>
+<% if @pops_rank.present? %>
   <div class="ranking">
     <div class="num_one">
       <%= image_tag 'No.1.png' %>
@@ -15,7 +23,7 @@
       <span class="three">No.3</span>
     </div>
   </div>
-  <% all_ranks.each do |room| %>
+  <% @pops_rank.each do |room| %>
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <div class="Artist"><%= room.artist_name %></div>
@@ -80,3 +88,16 @@
   </div>
 <% end %>
 </div>
+
+<%# 投稿したアーティストを表示 %>
+<div class="pickup-artist">
+  <div class="page-header">Pick Up Artist</div>
+  <div class="row">
+  <% @rooms.each do |room| %>
+    <%= render 'shared/artist_list', room: room %>
+  <% end %>
+  </div>
+</div>
+
+<%# ページネーション %>
+<%= paginate @rooms %>

@@ -1,0 +1,22 @@
+<div class="page-header">Artist Ranking</div>
+<ul class="nav nav-tabs">
+  <li role="presentation"><%= link_to '総合ランキング', rooms_path, class:"nav-link active" %></li>
+  <li role="presentation" class="nav-link dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+    ジャンル別 ランキング <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li><%= link_to 'ポップス', pops_rooms_path %></li>
+    <li><%= link_to 'ロック', rock_rooms_path %></li>
+    <li><%= link_to 'ダンス', dance_rooms_path %></li>
+    <li><%= link_to 'ジャズ', jazz_rooms_path %></li>
+    <li><%= link_to 'ラテン', raten_rooms_path %></li>
+    <li><%= link_to 'クラシック', classic_rooms_path %></li>
+    <li><%= link_to '行進曲', march_rooms_path %></li>
+    <li><%= link_to 'ワールド', world_rooms_path %></li>
+    <li><%= link_to '声楽', vocal_music_rooms_path %></li>
+    <li><%= link_to '邦楽', japanese_music_rooms_path %></li>
+    <li><%= link_to 'ア・カペラ', a_cappella_rooms_path %></li>
+  </ul>
+  </li>
+</ul>

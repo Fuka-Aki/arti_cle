@@ -15,8 +15,9 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       ImageList.appendChild(imageElement);
     };
     // user_preview機能
-    if(document.getElementById('user_image') !=null){
-      document.addEventListener('change', (e) => {
+    imageUser = document.getElementById('user_image')
+    if(imageUser){
+      imageUser.addEventListener('change', (e) => {
       const imageContent = document.querySelector('img')
       if (imageContent){
         imageContent.remove()
@@ -28,8 +29,10 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
     }
     )}
     // rooms_preview機能
-    if(document.getElementById('room_image') !=null){
-      document.addEventListener('change', (e) => {
+    imageRoom = document.getElementById('room_image')
+    if(imageRoom){
+      imageRoom.addEventListener('change', (e) => {
+        console.log('123')
       const imageContent = document.querySelector('img')
       if (imageContent){
         imageContent.remove()
