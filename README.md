@@ -13,6 +13,7 @@ ArtiCle
 
 # アプリURL
 
+- ゲストユーザーとしてワンタッチログインが可能です
 https://arti-cle.herokuapp.com/
 
 # 目指した課題解決
