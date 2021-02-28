@@ -26,6 +26,8 @@
         <%= f.file_field :image, class: 'hidden' %>
       <%# </label> %>
       <%= f.submit '送信', class: 'send_btn', id: "submit" %>
+      <%= f.text_field id = "current_user_id", value: current_user.id, class: "hidden" %>
+      <%= f.text_field id = "current_user_nickname", value: current_user.nickname, class: "hidden" %>
     </div>
   <% end %>
 </div>
