@@ -1,7 +1,7 @@
 <div class="message" id="message">
 <% @messages.each do |message| %>
   <% if current_user.id == message.user_id %>
-  <div class="my-content" id="my-message">
+  <div class="my-content" id="message">
     <div class="my-message">
       <div class="my-message-date">
         <%= l message.created_at %>
@@ -13,7 +13,7 @@
     </div>
   </div>
   <% else %>
-  <div class="content">
+  <div class="content" id="message">
     <div class="upper-message">
       <div class="message-user">
         <%= message.user.nickname %>

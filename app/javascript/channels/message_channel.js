@@ -10,10 +10,10 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    const nickName = `${data.user.nickname}`
+    const nickName = document.getElementById('message_current_user_nickname').value
     const content = `${data.content.content}`
     const messageData = `${data.time}`
-    const currentUser = `${data.user.id}`
+    const currentUser = document.getElementById('message_current_user_id').value
     const sendUser = `${data.content.user_id}`
     if (currentUser == sendUser) {
       const HTML = `
@@ -54,6 +54,12 @@ consumer.subscriptions.create("MessageChannel", {
       const newMessage = document.getElementById('content')
       messages.insertAdjacentHTML('beforeend', HTML)
       newMessage.value=''
+      // チャットスクロール
+      const documentElement = document.documentElement
+      window.scrollToBottom = () => {
+        window.scroll(0, documentElement.scrollHeight)
+      }
+      scrollToBottom()
     }
   }
 });

@@ -9,8 +9,9 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create!(message_params)
-    ActionCable.server.broadcast 'message_channel', content: @message, user: current_user,
-                                                    time: @message.created_at.strftime('%Y/%m/%d %H:%M:%S')
+    if @message.save
+      ActionCable.server.broadcast 'message_channel', content: @message, time: @message.created_at.strftime('%Y/%m/%d %H:%M:%S')
+    end
   end
 
   private

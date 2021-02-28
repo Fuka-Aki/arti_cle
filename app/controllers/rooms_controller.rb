@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
   before_action :ranking_artist, only: %i[index search]
 
   def index
+    cookies.signed[:user_id] = current_user.id
   end
 
   def new
